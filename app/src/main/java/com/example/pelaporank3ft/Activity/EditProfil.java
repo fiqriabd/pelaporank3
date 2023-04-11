@@ -521,8 +521,8 @@ public class EditProfil extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 progressDialog.dismiss();
-                Toast.makeText(EditProfil.this, "Data Profil berhasil diperbarui", Toast.LENGTH_SHORT).show();
                 finish();
+                Toast.makeText(EditProfil.this, "Data Profil berhasil diperbarui", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -537,7 +537,8 @@ public class EditProfil extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
             return true;
-        } if (uriKameraIntent!=null){
+        }
+        if (uriKameraIntent!=null){
             getContentResolver().delete(uriGambar,null,null);
             return true;
         }

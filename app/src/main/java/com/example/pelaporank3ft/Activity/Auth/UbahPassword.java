@@ -87,8 +87,8 @@ public class UbahPassword extends AppCompatActivity {
                     mUser.updatePassword(confirmNewPassword).addOnCompleteListener(task1 -> {
                         if (task1.isSuccessful()){
                             progressUbahPw.dismiss();
-                            Toast.makeText(UbahPassword.this, "Password berhasil diubah", Toast.LENGTH_SHORT).show();
                             finish();
+                            Toast.makeText(UbahPassword.this, "Password berhasil diubah", Toast.LENGTH_SHORT).show();
                         }else{
                             progressUbahPw.dismiss();
                             Toast.makeText(UbahPassword.this, "Password gagal diubah", Toast.LENGTH_SHORT).show();

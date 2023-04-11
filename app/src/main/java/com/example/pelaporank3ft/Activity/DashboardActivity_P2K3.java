@@ -93,13 +93,11 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
                     }
                 });
             }
-
         });
 
         titleBar = getSupportActionBar();
         openFragment(new HomeFragment());
         titleBar.setTitle("Pelaporan K3 FT UNDIP");
-
         navigationView = findViewById(R.id.bottom_nav_p2k3);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

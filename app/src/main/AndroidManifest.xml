@@ -55,7 +55,7 @@
             android:name=".Activity.DashboardActivity_P2K3"
             android:exported="true"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activity.Insiden.LaporInsiden"
             android:exported="true"
@@ -97,7 +97,7 @@
             android:label="Edit Status Insiden"
             android:parentActivityName=".Activity.Insiden.DaftarInsiden"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activity.PotensiBahaya.DetailPotensiBahaya"
             android:exported="true"
@@ -111,7 +111,7 @@
             android:label="Edit Status Potensi Bahaya"
             android:parentActivityName=".Activity.PotensiBahaya.DaftarPotensiBahaya"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".Activity.EditProfil"
             android:exported="true"
