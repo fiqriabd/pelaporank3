@@ -55,8 +55,8 @@
                         android:layout_column="1"
                         android:layout_marginStart="@dimen/_11sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_11ssp" />
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"/>
 
                 </TableRow>
 

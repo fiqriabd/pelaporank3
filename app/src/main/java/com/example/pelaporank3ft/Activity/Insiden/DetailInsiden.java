@@ -5,8 +5,10 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +36,7 @@ public class DetailInsiden extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mUser;
-    private String userId;
+    private String userId, statusLaporan;
 
     private ImageView imgFotoTandaPengenal, imgFotoKejadianInsiden;
     private TextView tvStatusLaporan, tvKodeInsiden, tvWaktuKejadian, tvLokasi, tvLokasiRinci, tvJenisInsiden,
@@ -101,7 +103,14 @@ public class DetailInsiden extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d(TAG, "Dokumen tersedia!");
-                        tvStatusLaporan.setText(document.getString("status_laporan_insiden"));
+                        statusLaporan = document.getString("status_laporan_insiden");
+                        if (statusLaporan.equals("Pending")){
+                            tvStatusLaporan.setText("Pending");
+                            tvStatusLaporan.setTextColor(getColor(R.color.red));
+                        } else{
+                            tvStatusLaporan.setText("Disetujui");
+                            tvStatusLaporan.setTextColor(getColor(R.color.green));
+                        }
                         tvKodeInsiden.setText(document.getString("kode_laporinsiden"));
                         tvWaktuKejadian.setText(document.getString("waktu_kejadian_insiden"));
                         tvLokasi.setText(document.getString("lokasi_departemen_insiden"));

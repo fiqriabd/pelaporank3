@@ -1,5 +1,6 @@
 package com.example.pelaporank3ft.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,13 @@ public class DaftarInsidenAdapter extends FirestoreAdapter<DaftarInsidenAdapter.
             } else  {
                 korbanInsiden.setText(model.getNama_korban_insiden());
             }
-            statusLaporan.setText(model.getStatus_laporan_insiden());
+            if (Objects.equals(model.getStatus_laporan_insiden(), "Pending")){
+                statusLaporan.setText("Pending");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.red));
+            } else {
+                statusLaporan.setText("Disetujui");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.green));
+            }
             // Click listener
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

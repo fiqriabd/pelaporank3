@@ -145,7 +145,7 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
         if (jumlahdatas > 0){
             navigationView.getOrCreateBadge(R.id.nav_notifikasi_p2k3).setNumber(jumlahdatas);
         } else {
-            navigationView.removeBadge(0);
+            navigationView.removeBadge(R.id.nav_notifikasi_p2k3);
         }
 
         Log.d(TAG, "TOTAL DATETETENG TENG TENG: "+ jumlahdatas);
@@ -156,7 +156,7 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
         if (jumlahData > 0){
             navigationView.getOrCreateBadge(R.id.nav_notifikasi_p2k3).setNumber(jumlahData);
         } else {
-            navigationView.removeBadge(0);
+            navigationView.removeBadge(R.id.nav_notifikasi_p2k3);
         }
 
         Log.d(TAG, "TOTAL DATETETEN: "+ jumlahData);

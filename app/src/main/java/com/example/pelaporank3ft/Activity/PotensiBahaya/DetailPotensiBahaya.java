@@ -34,7 +34,7 @@ public class DetailPotensiBahaya extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mUser;
-    private String userId;
+    private String userId, statusLaporan;
 
     private ImageView imgFotoTandaPengenal, imgFotoPB;
     private TextView tvStatusLaporan, tvKodePB, tvTglLapor, tvNamaPelapor, tvEmailPelapor, tvNipNim,
@@ -102,7 +102,14 @@ public class DetailPotensiBahaya extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()){
                         Log.d(TAG, "Dokumen tersedia!");
-                        tvStatusLaporan.setText(document.getString("status_laporan_pb"));
+                        statusLaporan = document.getString("status_laporan_pb");
+                        if (statusLaporan.equals("Pending")){
+                            tvStatusLaporan.setText("Pending");
+                            tvStatusLaporan.setTextColor(getColor(R.color.red));
+                        } else{
+                            tvStatusLaporan.setText("Disetujui");
+                            tvStatusLaporan.setTextColor(getColor(R.color.green));
+                        }
                         tvKodePB.setText(document.getString("kode_potensibahaya"));
                         tvTglLapor.setText(document.getString("tgl_lapor_pb"));
                         Glide.with(imgFotoTandaPengenal.getContext())

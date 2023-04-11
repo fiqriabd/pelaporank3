@@ -1,17 +1,21 @@
 package com.example.pelaporank3ft.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pelaporank3ft.Model.PotensiBahayaModel;
 import com.example.pelaporank3ft.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
+
+import java.util.Objects;
 
 public class PotensiBahayaAdapter extends FirestoreAdapter<PotensiBahayaAdapter.ViewHolder> {
     private OnPotensiBahayaSelectedListener mListener;
@@ -61,7 +65,13 @@ public class PotensiBahayaAdapter extends FirestoreAdapter<PotensiBahayaAdapter.
             waktuPB.setText(model.getTgl_lapor_pb());
             lokasiPB.setText(model.getLokasi_departemen_pb());
             pelaporPB.setText(model.getNama_pelapor_pb());
-            statusLaporan.setText(model.getStatus_laporan_pb());
+            if (Objects.equals(model.getStatus_laporan_pb(), "Pending")){
+                statusLaporan.setText("Pending");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.red));
+            } else {
+                statusLaporan.setText("Disetujui");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.green));
+            }
 
             // Click listener
             itemView.setOnClickListener(new View.OnClickListener() {
