@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_1sdp"
+    android:layout_marginBottom="@dimen/_1sdp"
+    app:cardCornerRadius="@dimen/_1sdp"
+    style="@style/CardViewTheme_Notifikasi">
+
+    <LinearLayout
+        android:id="@+id/notifikasi_daftar_insiden"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="@string/notifikasi_laporan_insiden_label"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_11ssp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtkodeinsiden_notifikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Kode"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"/>
+
+            <TextView
+                android:id="@+id/notifikasi_kode_insiden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_toEndOf="@id/txtkodeinsiden_notifikasi"
+                android:text="[$KODE_INSIDEN]"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masih Dalam Keadaan Pending"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_toEndOf="@id/notifikasi_kode_insiden"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtlokasiinsiden_notif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:text="Lokasi : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"/>
+
+            <TextView
+                android:id="@+id/notifikasi_lokasi_insiden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txtlokasiinsiden_notif"
+                android:text="[$LOKASI_INSIDEN]"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtwaktukejadian_notif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="Waktu Kejadian : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"/>
+
+                <TextView
+                    android:id="@+id/notifikasi_waktu_kejadian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/txtwaktukejadian_notif"
+                    android:text="[$WAKTU_KEJADIAN]"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

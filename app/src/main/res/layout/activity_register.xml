@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueFB"
+    tools:context=".Activity.Auth.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_19sdp"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:background="@drawable/bg_layout_white"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_19sdp"
+            android:layout_marginRight="@dimen/_19sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/nama_pengguna_label"
+                android:textColor="@color/grayPrimary"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_namapengguna_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:background="@drawable/bg_input_edit"
+                android:inputType="text"
+                android:lines="1"
+                android:paddingStart="@dimen/_9sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:textColor="@color/blackPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_19sdp"
+            android:layout_marginRight="@dimen/_19sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/email_labels"
+                android:textColor="@color/grayPrimary"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_email_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:background="@drawable/bg_input_edit"
+                android:fontFamily="@font/notosansjpregular"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:paddingStart="@dimen/_9sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:textColor="@color/blackPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_19sdp"
+            android:layout_marginRight="@dimen/_19sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/password_label"
+                android:textColor="@color/grayPrimary"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_password_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:background="@drawable/bg_input_edit"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:paddingStart="@dimen/_9sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:textColor="@color/blackPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_19sdp"
+            android:layout_marginRight="@dimen/_19sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/konfirmasi_password_label"
+                android:textColor="@color/grayPrimary"
+                android:textSize="@dimen/_15ssp" />
+
+            <EditText
+                android:id="@+id/et_konfirmasi_password_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:background="@drawable/bg_input_edit"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:paddingStart="@dimen/_9sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:textColor="@color/blackPrimary" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_19sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_19sdp"
+            android:backgroundTint="@color/green"
+            app:cornerRadius="@dimen/_8sdp"
+            android:fontFamily="@font/notosansjpregular"
+            android:text="@string/daftar_user_label"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_15ssp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_19sdp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/sudah_punya_akun"
+                android:textColor="@color/grayPrimary"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.228"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_sign_in_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansjpregular"
+                android:text="@string/masuk_disini_label"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.164"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

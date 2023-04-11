@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueFB"
+    tools:context=".Activity.PotensiBahaya.LaporPotensiBahaya">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_19sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:layout_marginEnd="@dimen/_19sdp"
+                android:layout_marginBottom="@dimen/_19sdp"
+                android:background="@drawable/bg_layout_white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_19sdp"
+                android:paddingTop="@dimen/_19sdp"
+                android:paddingRight="@dimen/_19sdp"
+                android:paddingBottom="@dimen/_19sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:fontFamily="@font/notosansjpregular"
+                    android:text="@string/pb_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/kode_potensi_bahaya_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_kode_potensi_bahaya"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:editable="false"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:focusable="false"
+                        android:focusedByDefault="false"
+                        android:clickable="false"
+                        android:textColor="@color/blackPrimary"
+                        tools:ignore="Deprecated" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/foto_tanda_pengenal_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_foto_tanda_pengenal_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:hint="Klik untuk menambahkan foto"
+                        android:inputType="none"
+                        android:focusedByDefault="false"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/nama_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_nama_pelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="none"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:focusable="false"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/email_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_kolom_email_pelapor_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="none"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:focusable="false"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/nip_nim_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_nip_nim_pelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"  />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/notelepon_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_notelepon_pelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="phone"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/tanggal_lapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_tgl_lapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:focusable="false"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:hint="Tanggal melapor potensi bahaya"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/kategori_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pilih/Isi Lainnya"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/lpb_dd_kategori_pelapor"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:fontFamily="@font/notosansjpregular"
+                    android:text="@string/keterangan_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/institusi_dikunjungi_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_institusi_dikunjungi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/tujuan_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_tujuan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:hint="Tujuan mengunjungi institusi"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:fontFamily="@font/notosansjpregular"
+                    android:text="@string/pb_label_"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/unit_civitas_akademika_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pilih"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/lpb_dd_unit_civitas_akademika"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="none"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/lokasi_potensi_bahaya_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_lokasi_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/potensi_bahaya_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pilih/Isi Lainnya"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/lpb_dd_potensi_bahaya"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/deskripsi_potensi_bahaya_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_deskripsi_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/resiko_bahaya_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_resiko_bahaya"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:hint="Resiko bahaya yang ditimbulkan"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/usulan_perbaikan_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_usulan_perbaikan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_9sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/foto_pb_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <EditText
+                        android:id="@+id/et_lpb_foto_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:hint="Klik untuk menambahkan foto"
+                        android:inputType="none"
+                        android:focusedByDefault="false"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/lpb_btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_19sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_19sdp"
+                    android:backgroundTint="@color/green"
+                    app:cornerRadius="@dimen/_8sdp"
+                    android:fontFamily="@font/notosansjpregular"
+                    android:text="@string/simpan_data"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/_15ssp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/lpb_btn_reset"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_19sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_19sdp"
+                    android:backgroundTint="@color/grayPrimary"
+                    app:cornerRadius="@dimen/_8sdp"
+                    android:fontFamily="@font/notosansjpregular"
+                    android:text="@string/reset"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/_15ssp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

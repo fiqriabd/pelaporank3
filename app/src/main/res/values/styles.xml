@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CardViewTheme">
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_5sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+    </style>
+
+    <style name="CardViewTheme_Notifikasi">
+        <item name="android:layout_marginStart">@dimen/_1sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_1sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_1sdp</item>
+    </style>
+</resources>

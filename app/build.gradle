@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.pelaporank3ft'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.pelaporank3ft"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //Library Material Design UI
+    implementation 'com.google.android.material:material:1.8.0'
+
+    //Library Constraint Layout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //Library Recycler View
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+
+    //Library Card View
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //Library Circle Image for User's Profil Photos
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Library for Image Loading
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //Library for Image Downloading and Cache
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Library for Image Cropper
+    implementation 'com.github.bfrachia:android-image-cropper:2.7.0'
+
+    //Library Firebase
+    implementation 'com.google.firebase:firebase-auth:21.2.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.5'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+    //Library Scalable DP / SP for image and text
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //Library for Zoomable Image
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    //Other Library
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.browser:browser:1.5.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

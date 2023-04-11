@@ -1,0 +1,225 @@
+<resources>
+    <string name="app_name">Pelaporan K3 FT Undip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_screen">Pelaporan K3</string>
+    <string name="login">Login</string>
+    <string name="login_page">Login Page</string>
+    <string name="halaman_login">Halaman Login</string>
+    <string name="dont_have_account">Don\'t have account?</string>
+    <string name="sign_up_here">Sign Up Here</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="sign_in_here">Sign In Here</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="submit">Submit</string>
+    <string name="edit">Edit</string>
+    <string name="simpan_data">Simpan Data</string>
+    <string name="save">Save</string>
+    <string name="reset">Reset</string>
+    <string name="alamat_email_label">Alamat Email</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="konfirmasi_password_label">Konfirmasi Password</string>
+    <string name="nama_labels">Nama</string>
+    <string name="alamat_email_labels">Alamat Email</string>
+    <string name="password_labels">Password</string>
+    <string name="nama_pengguna_labels">Nama Pengguna</string>
+    <string name="konfirmasi_password_labels">Konfirmasi Password</string>
+    <string name="waktu_kejadian_labels">Waktu Kejadian</string>
+    <string name="lokasi_labels">Lokasi</string>
+    <string name="lokasi_rinci_labels">Lokasi Rinci</string>
+    <string name="jenis_insiden_labels">Jenis Insiden</string>
+    <string name="kronologi_labels">Kronologi Kejadian</string>
+    <string name="penyebab_insiden_labels">Penyebab Insiden</string>
+    <string name="foto_tanda_pengenal_labels">Foto Tanda Pengenal</string>
+    <string name="nama_pelapor_labels">Nama Pelapor</string>
+    <string name="email_pelapor_labels">Email Pelapor</string>
+    <string name="foto_kejadian_labels">Foto Kejadian</string>
+    <string name="nip_nim_labels">NIP/NIM</string>
+    <string name="tanggal_lapor_labels">Tanggal Lapor</string>
+    <string name="kategori_pelapor_labels">Kategori Pelapor</string>
+    <string name="tujuan_labels">Tujuan</string>
+    <string name="unit_civitas_akademika_labels">Unit Civitas Akademika</string>
+    <string name="lokasi_potensi_bahaya_labels">Lokasi Potensi Bahaya</string>
+    <string name="potensi_bahaya_labels">Jenis Potensi Bahaya</string>
+    <string name="resiko_bahaya_labels">Resiko Bahaya</string>
+    <string name="usulan_perbaikan_labels">Usulan Perbaikan</string>
+    <string name="foto_pb_labels">Foto Potensi Bahaya</string>
+    <string name="daftar_user_label">Daftar User</string>
+    <string name="belum_punya_akun">Belum Punya Akun?</string>
+    <string name="daftar_disini_label">Daftar Disini</string>
+    <string name="masuk_disini_label">Masuk Disini</string>
+    <string name="sudah_punya_akun">Sudah Punya Akun?</string>
+    <string name="nama_pengguna_label">Nama Pengguna</string>
+    <string name="kode_insiden_label">Kode Lapor Insiden</string>
+    <string name="kode_potensi_bahaya_label">Kode Potensi Bahaya</string>
+    <string name="waktu_kejadian_label">Waktu Kejadian <font color='#FF0000'>*</font></string>
+    <string name="lokasi_label">Lokasi <font color='#FF0000'>*</font></string>
+    <string name="lokasi_kejadian_label">Lokasi Kejadian</string>
+    <string name="lokasi_rinci_label">Lokasi Rinci <font color='#FF0000'>*</font></string>
+    <string name="jenis_insiden_label">Jenis Insiden <font color='#FF0000'>*</font></string>
+    <string name="kronologi_label">Kronologi Kejadian <font color='#FF0000'>*</font></string>
+    <string name="penyebab_insiden_label">Penyebab Insiden <font color='#FF0000'>*</font></string>
+    <string name="status">Status</string>
+    <string name="p2k3_label">P2K3</string>
+    <string name="foto_tanda_pengenal_label">Foto Tanda Pengenal <font color='#FF0000'>*</font></string>
+    <string name="nama_label">Nama <font color='#FF0000'>*</font></string>
+    <string name="nama_pelapor_label">Nama Pelapor <font color='#FF0000'>*</font></string>
+    <string name="nama_korban_label">Nama Korban</string>
+    <string name="email_labels">Email</string>
+    <string name="email_label">Email <font color='#FF0000'>*</font></string>
+    <string name="email_pelapor_label">Email Pelapor <font color='#FF0000'>*</font></string>
+    <string name="email_korban_label">Email Korban</string>
+    <string name="notelepon_label">Nomor Telepon <font color='#FF0000'>*</font></string>
+    <string name="notelepon_pelapor_label">Nomor Telepon Pelapor <font color='#FF0000'>*</font></string>
+    <string name="notelepon_korban_label">Nomor Telepon Korban</string>
+    <string name="unit_label">Unit <font color='#FF0000'>*</font></string>
+    <string name="bukti_foto_label">Bukti Foto</string>
+    <string name="nip_nim_label">NIP/NIM <font color='#FF0000'>*</font></string>
+    <string name="kategori_pelapor_label">Kategori Pelapor <font color='#FF0000'>*</font></string>
+    <string name="institusi_dikunjungi_label">Institusi yang dikunjungi <font color='#FF0000'>*</font></string>
+    <string name="tujuan_label">Tujuan <font color='#FF0000'>*</font></string>
+    <string name="unit_civitas_akademika_label">Unit Civitas Akademika <font color='#FF0000'>*</font></string>
+    <string name="lokasi_potensi_bahaya_label">Lokasi Potensi Bahaya <font color='#FF0000'>*</font></string>
+    <string name="potensi_bahaya_label">Jenis Potensi Bahaya <font color='#FF0000'>*</font></string>
+    <string name="deskripsi_potensi_bahaya_label">Deskripsi Potensi Bahaya <font color='#FF0000'>*</font></string>
+    <string name="resiko_bahaya_label">Resiko Bahaya <font color='#FF0000'>*</font></string>
+    <string name="usulan_perbaikan_label">Usulan Perbaikan <font color='#FF0000'>*</font></string>
+    <string name="foto_kejadian_label">Foto Kejadian <font color='#FF0000'>*</font></string>
+    <string name="kategori_laporan">Kategori Laporan</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_daftar_laporan">Daftar Laporan</string>
+    <string name="nav_pindai_lokasi">Pindai Lokasi</string>
+    <string name="nav_tugas_penanganan">Tugas Penanganan</string>
+    <string name="nav_account">Akun</string>
+    <string name="nav_title_account">Akun</string>
+    <string name="nama_lengkap_pengguna">Nama Lengkap Pengguna</string>
+    <string name="tipe_pengguna">Tipe Pengguna</string>
+    <string name="lokasi_departemen_label">Lokasi Departemen:</string>
+    <string name="lokasi_departemen_metode_inspeksi_label">Lokasi Departemen</string>
+    <string name="insiden_data_kejadian">DATA KEJADIAN</string>
+    <string name="insiden_data_pelapor">DATA PELAPOR</string>
+    <string name="insiden_data_korban">DATA KORBAN (Ket: Jika tidak tahu bisa tidak diisi!)</string>
+    <string name="pending_label">Pending</string>
+    <string name="pb_label">LAPOR POTENSI BAHAYA</string>
+    <string name="keterangan_label">KETERANGAN</string>
+    <string name="no_telepon_pelapor_label">No.Telepon Pelapor</string>
+    <string name="unit_pelapor_label">Unit Pelapor</string>
+    <string name="no_telepon_korban_label">No.Telepon Korban</string>
+    <string name="unit_korban_label">Unit Korban</string>
+    <string name="tanggal_lapor_label">Tanggal Lapor <font color='#FF0000'>*</font></string>
+    <string name="institusi_yang_dikunjungi_label">Inst. Yg dikunjungi</string>
+    <string name="deskripsi_p_bahaya_label">Deskripsi P. Bahaya</string>
+    <string name="email_korban_insiden_label">Email</string>
+    <string name="nama_korban_insiden_label">Nama</string>
+    <string name="notelepon_korban_insiden_label">Nomor Telepon</string>
+    <string name="unit_korban_insiden_label">Unit</string>
+    <string name="lapor_insiden_label">Lapor Insiden</string>
+    <string name="lapor_potensi_bahaya_label">Lapor Potensi Bahaya</string>
+    <string name="daftar_insiden_label">Daftar Insiden</string>
+    <string name="daftar_potensi_bahaya_label">Daftar Potensi Bahaya</string>
+    <string name="logout_label">Logout</string>
+    <string name="id_label_">ID:</string>
+    <string name="nama_label_">Nama:</string>
+    <string name="tipe_label_">Tipe:</string>
+    <string name="kondisi_label_">Kondisi:</string>
+    <string name="kode_lapor_insiden_">Kode Lapor Insiden:</string>
+    <string name="waktu_kejadian_insiden_">Waktu Kejadian:</string>
+    <string name="lokasi_insiden_">Lokasi:</string>
+    <string name="nama_pelapor_">Nama Pelapor:</string>
+    <string name="nama_korban_">Nama Korban:</string>
+    <string name="Status_">Status:</string>
+    <string name="kode_lapor_potensi_bahaya_">Kode Potensi Bahaya:</string>
+    <string name="tanggal_lapor_">Tanggal Lapor:</string>
+    <string name="lokasi_pb_">Lokasi:</string>
+    <string name="kode_pb_">Kode Potensi Bahaya:</string>
+    <string name="tanggal_lapor_pb_">Tanggal Lapor:</string>
+    <string name="nama_">Nama:</string>
+    <string name="departemen_">Departemen:</string>
+    <string name="id_label">ID</string>
+    <string name="tanggal_kadaluwarsa">Tanggal Kadaluwarsa</string>
+    <string name="ubah_password_label">Ubah Password</string>
+    <string name="password_lama_label">Password Lama</string>
+    <string name="password_baru_label">Password Baru</string>
+    <string name="ganti_password_label">Ubah Password</string>
+    <string name="lupa_password">Lupa Password?</string>
+    <string name="klik_disini_label">Klik Disini</string>
+    <string name="pelaporan_k3_label">Pelaporan K3</string>
+    <string name="fakultas_teknik_label">Fakultas Teknik</string>
+    <string name="universitas_diponegoro">Universitas Diponegoro</string>
+    <string name="edit_profil_label">Edit Profil</string>
+    <string name="simpan_perubahan_label">Simpan Perubahan</string>
+    <string name="ubah_foto_label">Ubah Foto</string>
+    <string name="detail">Detail</string>
+    <string name="hapus">Hapus</string>
+    <string name="ubah">Ubah</string>
+    <string name="foto_benda_klik_untuk_mengubah_foto">Foto Benda (Klik untuk mengubah foto)</string>
+    <string name="foto_benda_klik_untuk_mengganti_foto">Foto Benda (Klik untuk mengganti foto)</string>
+    <string name="berat_kg_label">Berat (kg)</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="kondisi_">Kondisi:</string>
+    <string name="kondisi_benda_">Kondisi Benda:</string>
+    <string name="kondisi_benda">Kondisi Benda</string>
+    <string name="foto_pb_label">Foto Potensi Bahaya <font color='#FF0000'>*</font></string>
+    <string name="pb_label_">LAPORAN POTENSI BAHAYA</string>
+    <string name="pilih_tindakan_label">Pilih tindakan</string>
+    <string name="ambil_gambar_label">Ambil gambar dari</string>
+    <string name="kamera_label">Kamera</string>
+    <string name="galeri_label">Galeri</string>
+    <string name="status_laporan_">Status Laporan:</string>
+    <string name="status_laporan_label">Status Laporan</string>
+    <string name="notifikasi_laporan_insiden_label">[Laporan Insiden]</string>
+    <string name="notifikasi_laporan_pb_label">[Laporan Potensi Bahaya]</string>
+    <string name="edit_status_laporan">Edit Status Laporan</string>
+    <string-array name="departemenft">
+        <item>Teknik Sipil</item>
+        <item>Arsitektur</item>
+        <item>Teknik Kimia</item>
+        <item>Perencanaan Wilayah dan Kota</item>
+        <item>Teknik Mesin</item>
+        <item>Teknik Elektro</item>
+        <item>Teknik Industri</item>
+        <item>Teknik Lingkungan</item>
+        <item>Teknik Kapal</item>
+        <item>Teknik Geologi</item>
+        <item>Teknik Geodesi</item>
+        <item>Teknik Komputer</item>
+        <item>Dekanat</item>
+    </string-array>
+    <string-array name="status">
+        <item>Pending</item>
+        <item>Disetujui</item>
+    </string-array>
+    <string-array name="jenisinsiden">
+        <item>Pingsan</item>
+        <item>Serangan Jantung</item>
+        <item>Asma</item>
+        <item>Pendarahan</item>
+        <item>Keracunan</item>
+        <item>Cedera</item>
+    </string-array>
+    <string-array name="pilihpenyebab">
+        <item>Kecelakaan Lalu Lintas</item>
+        <item>Kebakaran</item>
+        <item>Pohon Tumbang</item>
+        <item>Laboratorium</item>
+        <item>Gempa Bumi</item>
+        <item>Pingsan</item>
+    </string-array>
+    <string-array name="kategoripelapor">
+        <item>Dosen</item>
+        <item>Karyawan</item>
+        <item>Mahasiswa</item>
+        <item>Tamu</item>
+    </string-array>
+    <string-array name="jenispotensibahaya">
+        <item>Fisik</item>
+        <item>Kimiawi</item>
+        <item>Biologis</item>
+        <item>Ergonomi</item>
+        <item>Psikologis</item>
+    </string-array>
+</resources>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blueFB"
+    tools:context=".Activity.Insiden.DetailInsiden">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtstatuslaporan_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/status_laporan_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_status_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtkodeinsiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/kode_insiden_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_kode_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtwaktukejadian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/waktu_kejadian_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_waktu_kejadian_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtlokasikejadian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/lokasi_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_lokasi_kejadian_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtlokasirinci"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/lokasi_rinci_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_lokasi_rinci_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtjenisinsiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/jenis_insiden_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_jenis_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtkronologikejadian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/kronologi_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_kronologi_kejadian_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtpenyebabinsiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/penyebab_insiden_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_penyebab_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtfototandapengenal_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/foto_tanda_pengenal_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_detail_foto_tp_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:scaleType="fitStart"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/img_example"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtnamapelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/nama_pelapor_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_nama_pelapor_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtemailpelapor_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/email_pelapor_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_email_pelapor_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtnoteleponpelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/no_telepon_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_notelepon_pelapor_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtunitpelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/unit_pelapor_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_unit_pelapor_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtnamakorban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/nama_korban_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_nama_korban_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtemailkorban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/email_korban_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_email_korban_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtnoteleponkorban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/no_telepon_korban_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_notelepon_korban_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtunitkorban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/unit_korban_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_unit_korban_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtfotokejadian_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/foto_kejadian_labels"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_detail_foto_kejadian_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:scaleType="fitStart"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/img_example"/>
+
+                </TableRow>
+            </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

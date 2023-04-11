@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817584103125",
+    "project_id": "inspeksi-k3-ft-insiden-pb",
+    "storage_bucket": "inspeksi-k3-ft-insiden-pb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817584103125:android:451e1cccb5304bf06b4c5c",
+        "android_client_info": {
+          "package_name": "com.example.pelaporank3ft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817584103125-43inpj7s1cpgs50i7kl3f4m1r42ms75p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBThY64Git1rHudJnoC2EatHLfholFm-B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817584103125-43inpj7s1cpgs50i7kl3f4m1r42ms75p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

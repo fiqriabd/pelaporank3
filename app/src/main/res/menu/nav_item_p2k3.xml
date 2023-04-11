@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home_p2k3"
+        android:icon="@drawable/ikon_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_daftar_laporan_p2k3"
+        android:icon="@drawable/ikon_daftar_laporan"
+        android:title="Laporan" />
+
+    <item
+        android:id="@+id/nav_notifikasi_p2k3"
+        android:icon="@drawable/ikon_notifikasi"
+        android:title="Notifikasi" />
+    <item
+        android:id="@+id/nav_profil_p2k3"
+        android:icon="@drawable/ikon_person"
+        android:title="Profil" />
+</menu>

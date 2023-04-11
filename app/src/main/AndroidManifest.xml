@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo_k3"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo_k3_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PelaporanK3FT"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Activity.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.Auth.LoginActivity"
+            android:exported="true"
+            android:label="Login Pelaporan K3"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.Auth.RegisterActivity"
+            android:exported="true"
+            android:label="Daftar User"
+            android:parentActivityName=".Activity.Auth.LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.DashboardActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.DashboardActivity_P2K3"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".Activity.Insiden.LaporInsiden"
+            android:exported="true"
+            android:label="Tambah Data Insiden"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.PotensiBahaya.LaporPotensiBahaya"
+            android:exported="true"
+            android:label="Tambah Potensi Bahaya"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.Insiden.DaftarInsiden"
+            android:exported="true"
+            android:label="Daftar Laporan Insiden"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.PotensiBahaya.DaftarPotensiBahaya"
+            android:exported="true"
+            android:label="Daftar Potensi Bahaya"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.Insiden.DetailInsiden"
+            android:exported="true"
+            android:label="Detail Insiden"
+            android:parentActivityName=".Activity.Insiden.DaftarInsiden"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.Insiden.EditStatusInsiden"
+            android:exported="true"
+            android:label="Edit Status Insiden"
+            android:parentActivityName=".Activity.Insiden.DaftarInsiden"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".Activity.PotensiBahaya.DetailPotensiBahaya"
+            android:exported="true"
+            android:label="Detail Potensi Bahaya"
+            android:parentActivityName=".Activity.PotensiBahaya.DaftarPotensiBahaya"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.PotensiBahaya.EditStatusPotensiBahaya"
+            android:exported="true"
+            android:label="Edit Status Potensi Bahaya"
+            android:parentActivityName=".Activity.PotensiBahaya.DaftarPotensiBahaya"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".Activity.EditProfil"
+            android:exported="true"
+            android:label="Edit Profil"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Activity.Auth.UbahPassword"
+            android:exported="true"
+            android:label="Ubah Password"
+            android:parentActivityName=".Activity.DashboardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+    </application>
+
+</manifest>
