@@ -1,5 +1,6 @@
 package com.example.pelaporank3ft.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +11,8 @@ import android.os.Handler;
 
 import com.example.pelaporank3ft.Activity.Auth.LoginActivity;
 import com.example.pelaporank3ft.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -44,25 +47,40 @@ public class SplashScreen extends AppCompatActivity {
 
             userId = mAuth.getCurrentUser().getUid();
             dbReference = mFirestore.collection("users").document(userId);
-            dbReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            dbReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
-                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException e) {
+                public void onSuccess(DocumentSnapshot value) {
                     if (value != null && value.exists()) {
                         tipeUser = value.getString("tipe_user");
                         if (tipeUser.equals("p2k3")){
-                                //jeda 1 detik
-                                handler.postDelayed(() -> {
-                                startActivity(new Intent(getApplicationContext(), DashboardActivity_P2K3.class));
-                                finish();
-                            }, 1000);
+                            //jeda 1 milidetik
+                            handler.postDelayed(() -> {
+                            startActivity(new Intent(getApplicationContext(), DashboardActivity_P2K3.class));
+                            finish();
+                            }, 1);
                         } else if (tipeUser.equals("user")) {
-                                //jeda 1 detik
-                                handler.postDelayed(() -> {
-                                startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                                finish();
-                            }, 1000);
+                            //jeda 1 milidetik
+                            handler.postDelayed(() -> {
+                            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                            finish();
+                            }, 1);
                         }
+                    } else {
+                        //jeda 1 detik
+                        handler.postDelayed(() -> {
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            finish();
+                        }, 1000);
                     }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    //jeda 1 detik
+                    handler.postDelayed(() -> {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        finish();
+                    }, 1000);
                 }
             });
         } else {

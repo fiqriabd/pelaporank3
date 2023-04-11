@@ -1,5 +1,6 @@
 package com.example.pelaporank3ft.Activity.Auth;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,8 @@ import android.widget.Toast;
 import com.example.pelaporank3ft.Activity.DashboardActivity;
 import com.example.pelaporank3ft.Activity.DashboardActivity_P2K3;
 import com.example.pelaporank3ft.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -39,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        mFirestore = FirebaseFirestore.getInstance();
 
         initView();
     }
@@ -74,35 +76,43 @@ public class LoginActivity extends AppCompatActivity {
             progressLogin.show();
             //autentikasi User
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-                        if(task.isSuccessful()){
-
-                            userId = mAuth.getCurrentUser().getUid();
-                            dbReference = mFirestore.collection("users").document(userId);
-                            dbReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                                @Override
-                                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException e) {
-                                    if (value != null && value.exists()){
-                                        tipeUser = value.getString("tipe_user");
-                                        if (tipeUser.equals("p2k3")){
-                                            progressLogin.dismiss();
-                                            Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), DashboardActivity_P2K3.class));
-                                            finish();
-                                        } else if (tipeUser.equals("user")) {
-                                            progressLogin.dismiss();
-                                            Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                                            finish();
-                                        }
-                                    }
+                if(task.isSuccessful()){
+                    userId = mAuth.getUid();
+                    mFirestore = FirebaseFirestore.getInstance();
+                    dbReference = mFirestore.collection("users").document(userId);
+                    dbReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot value) {
+                            if (value != null && value.exists()){
+                                tipeUser = value.getString("tipe_user");
+                                if (tipeUser.equals("p2k3")){
+                                    progressLogin.dismiss();
+                                    Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), DashboardActivity_P2K3.class));
+                                    finish();
+                                } else if (tipeUser.equals("user")) {
+                                    progressLogin.dismiss();
+                                    Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                                    finish();
                                 }
-                            });
-
-                        } else{
+                            } else {
+                                progressLogin.dismiss();
+                                Toast.makeText(LoginActivity.this, "Login Gagal",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
                             progressLogin.dismiss();
                             Toast.makeText(LoginActivity.this, "Login Gagal",Toast.LENGTH_SHORT).show();
                         }
-                    }
+                    });
+                } else{
+                    progressLogin.dismiss();
+                    Toast.makeText(LoginActivity.this, "Login Gagal",Toast.LENGTH_SHORT).show();
+                }
+            }
             );
         });
 
