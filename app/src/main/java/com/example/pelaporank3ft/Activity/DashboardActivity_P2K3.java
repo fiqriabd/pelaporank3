@@ -9,11 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.pelaporank3ft.Fragment.DaftarLaporan;
@@ -67,11 +65,11 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
 
     private void initView() {
         if (mQuery_Insiden == null){
-            Log.w(TAG, "Tidak ada data");
+            Log.w(TAG, "Tidak ada data Laporan Insiden ");
         }
 
         if (mQuery_PB == null) {
-            Log.w(TAG, "Tidak ada data");
+            Log.w(TAG, "Tidak ada data Laporan Potensi Bahaya");
         }
 
         mQuery_Insiden.addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -148,7 +146,7 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
             navigationView.removeBadge(R.id.nav_notifikasi_p2k3);
         }
 
-        Log.d(TAG, "TOTAL DATETETENG TENG TENG: "+ jumlahdatas);
+        Log.d(TAG, "Total Data Laporan (home): "+ jumlahdatas);
     }
 
     public void onDataTotalUpdated(int jumlahData){
@@ -159,7 +157,7 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
             navigationView.removeBadge(R.id.nav_notifikasi_p2k3);
         }
 
-        Log.d(TAG, "TOTAL DATETETEN: "+ jumlahData);
+        Log.d(TAG, "Total Data Laporan (notifikasi): "+ jumlahData);
     }
 
     @Override

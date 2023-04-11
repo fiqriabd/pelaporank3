@@ -20,8 +20,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.pelaporank3ft.Activity.Insiden.DaftarInsiden;
-import com.example.pelaporank3ft.Activity.Insiden.EditStatusInsiden;
 import com.example.pelaporank3ft.Adapter.PotensiBahayaAdapter;
 import com.example.pelaporank3ft.R;
 import com.google.android.gms.tasks.OnCompleteListener;

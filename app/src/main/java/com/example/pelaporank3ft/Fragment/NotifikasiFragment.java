@@ -9,21 +9,17 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.pelaporank3ft.Activity.DashboardActivity_P2K3;
 import com.example.pelaporank3ft.Activity.Insiden.EditStatusInsiden;
 import com.example.pelaporank3ft.Activity.PotensiBahaya.EditStatusPotensiBahaya;
 import com.example.pelaporank3ft.Adapter.NotifikasiInsidenAdapter;
@@ -98,7 +94,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
         pbNotifikasi.setVisibility(View.VISIBLE);
 
         if (mQuery_Insiden == null) {
-            Log.w(TAG, "Tidak ada data");
+            Log.w(TAG, "Tidak ada data Laporan Insiden");
         }
 
         mAdapter_Insiden = new NotifikasiInsidenAdapter(mQuery_Insiden, this) {
@@ -108,7 +104,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
                 if (getItemCount() == 0) {
                     notifikasiInsidenRec.setVisibility(View.GONE);
                     pbNotifikasi.setVisibility(View.GONE);
-                    Log.w(TAG, "Jumlah Insiden = 0");
+                    Log.w(TAG, "Jumlah Notifikasi Laporan Insiden = 0");
                 } else {
                     notifikasiInsidenRec.setVisibility(View.VISIBLE);
                     pbNotifikasi.setVisibility(View.GONE);
@@ -123,7 +119,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
         };
 
         if (mQuery_PB == null) {
-            Log.w(TAG, "Tidak ada data");
+            Log.w(TAG, "Tidak ada data Laporan Potensi Bahaya");
         }
 
         mAdapter_PB = new NotifikasiPBAdapter(mQuery_PB, this) {
@@ -133,7 +129,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
                 if (getItemCount() == 0) {
                     notifikasiPBRec.setVisibility(View.GONE);
                     pbNotifikasi.setVisibility(View.GONE);
-                    Log.w(TAG, "Jumlah Potensi Bahaya = 0");
+                    Log.w(TAG, "Jumlah Notifikasi Laporan Potensi Bahaya = 0");
                 } else {
                     notifikasiPBRec.setVisibility(View.VISIBLE);
                     pbNotifikasi.setVisibility(View.GONE);
@@ -196,7 +192,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
         try {
             totalDataListener = (TotalDataListener) context;
         } catch (ClassCastException e){
-            Log.d(TAG, "TOTAL DATANYA : "+ jumlahdata);
+            Log.d(TAG, "Total Data Laporan : "+ jumlahdata);
         }
     }
 
