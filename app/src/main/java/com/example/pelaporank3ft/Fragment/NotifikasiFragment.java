@@ -57,7 +57,7 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
     private Query mQuery_Insiden;
     private Query mQuery_PB;
 
-    private int jumlahinsiden = 0, jumlahpb = 0, jumlahdata = 0;
+    private int jumlahinsiden, jumlahpb, jumlahdata;
     private ProgressBar pbNotifikasi;
     private RecyclerView notifikasiInsidenRec, notifikasiPBRec;
     private String userPengisi, userIn, jml;

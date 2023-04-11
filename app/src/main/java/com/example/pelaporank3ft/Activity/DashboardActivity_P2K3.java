@@ -42,8 +42,8 @@ public class DashboardActivity_P2K3 extends AppCompatActivity implements Notifik
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mUser;
-    private int jumlahinsiden = 0, jumlahpb = 0, jumlahdatas = 0;
-    private int jumlahData = 0;
+    private int jumlahinsiden, jumlahpb, jumlahdatas;
+    private int jumlahData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
