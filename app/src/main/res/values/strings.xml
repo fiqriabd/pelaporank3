@@ -55,6 +55,7 @@
     <string name="nama_pengguna_label">Nama Pengguna</string>
     <string name="kode_insiden_label">Kode Lapor Insiden</string>
     <string name="kode_potensi_bahaya_label">Kode Potensi Bahaya</string>
+    <string name="wajib_diisi_label"><font color='#FF0000'>*</font> Wajib diisi</string>
     <string name="waktu_kejadian_label">Waktu Kejadian <font color='#FF0000'>*</font></string>
     <string name="lokasi_label">Lokasi <font color='#FF0000'>*</font></string>
     <string name="lokasi_kejadian_label">Lokasi Kejadian</string>
