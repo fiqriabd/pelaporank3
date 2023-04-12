@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mUser;
-    private String userId, tglDibuat, tglDiupdate;
+    private String userId, tglDibuat, tglDiupdate, tipeUser;
 
     private MaterialButton btnSignUp;
     private EditText namaPenggunaRegister, emailRegister, passwordRegister, konfirmasiPasswordRegister;
@@ -67,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
         konfirmasiPasswordRegister = findViewById(R.id.et_konfirmasi_password_register);
         btnSignUp = findViewById(R.id.btn_sign_up);
         tvSignInHere = findViewById(R.id.txt_sign_in_here);
+        tipeUser = "user";
 
         ProgressDialog progressRegister = new ProgressDialog(RegisterActivity.this);
         progressRegister.setMessage("Mohon Tunggu Sebentar...");
@@ -114,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.put("img_user", null);
                     user.put("dibuat_user", tglDibuat);
                     user.put("diupdate_user", tglDiupdate);
+                    user.put("tipe_user", tipeUser);
                     documentReference.set(user).addOnSuccessListener(regUser -> {
                         Log.d("TAG", "User berhasil dibuat dengan user ID: " + userId);
                     });
