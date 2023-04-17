@@ -5,7 +5,8 @@ public class PotensiBahayaModel {
     String kode_potensibahaya, tanda_pengenal_pb, nama_pelapor_pb, email_pelapor_pb, nip_nim_pb,
             nomor_telepon_pelapor_pb, tgl_lapor_pb, kategori_pelapor_pb, institusi_pb, tujuan_pb,
             lokasi_departemen_pb, lokasi_pb, potensi_bahaya, deskripsi_pb, resiko_bahaya_pb,
-            usulan_perbaikan_pb, gambar_pb, dibuat_pb, diupdate_pb, id_user, status_laporan_pb;
+            usulan_perbaikan_pb, gambar_pb, dibuat_pb, diupdate_pb, id_user, status_laporan_pb,
+            id_p2k3_pb, nama_p2k3_pb;
 
     Boolean status_deleted_pb;
 
@@ -18,7 +19,8 @@ public class PotensiBahayaModel {
                               String tujuan_pb, String lokasi_departemen_pb, String lokasi_pb,
                               String potensi_bahaya, String deskripsi_pb, String resiko_bahaya_pb,
                               String usulan_perbaikan_pb, String gambar_pb, String dibuat_pb,
-                              String diupdate_pb, String id_user, Boolean status_deleted_pb, String status_laporan_pb) {
+                              String diupdate_pb, String id_user, String status_laporan_pb,
+                              String id_p2k3_pb, String nama_p2k3_pb, Boolean status_deleted_pb) {
         this.kode_potensibahaya = kode_potensibahaya;
         this.tanda_pengenal_pb = tanda_pengenal_pb;
         this.nama_pelapor_pb = nama_pelapor_pb;
@@ -39,8 +41,10 @@ public class PotensiBahayaModel {
         this.dibuat_pb = dibuat_pb;
         this.diupdate_pb = diupdate_pb;
         this.id_user = id_user;
-        this.status_deleted_pb = status_deleted_pb;
         this.status_laporan_pb = status_laporan_pb;
+        this.id_p2k3_pb = id_p2k3_pb;
+        this.nama_p2k3_pb = nama_p2k3_pb;
+        this.status_deleted_pb = status_deleted_pb;
     }
 
     public String getKode_potensibahaya() {
@@ -203,19 +207,35 @@ public class PotensiBahayaModel {
         this.id_user = id_user;
     }
 
-    public Boolean getStatus_deleted_pb(){
-        return status_deleted_pb;
-    }
-
-    public void setStatus_deleted_pb(Boolean status_deleted_pb){
-        this.status_deleted_pb = status_deleted_pb;
-    }
-
-    public String getStatus_laporan_pb(){
+    public String getStatus_laporan_pb() {
         return status_laporan_pb;
     }
 
     public void setStatus_laporan_pb(String status_laporan_pb) {
         this.status_laporan_pb = status_laporan_pb;
+    }
+
+    public String getId_p2k3_pb() {
+        return id_p2k3_pb;
+    }
+
+    public void setId_p2k3_pb(String id_p2k3_pb) {
+        this.id_p2k3_pb = id_p2k3_pb;
+    }
+
+    public String getNama_p2k3_pb() {
+        return nama_p2k3_pb;
+    }
+
+    public void setNama_p2k3_pb(String nama_p2k3_pb) {
+        this.nama_p2k3_pb = nama_p2k3_pb;
+    }
+
+    public Boolean getStatus_deleted_pb() {
+        return status_deleted_pb;
+    }
+
+    public void setStatus_deleted_pb(Boolean status_deleted_pb) {
+        this.status_deleted_pb = status_deleted_pb;
     }
 }

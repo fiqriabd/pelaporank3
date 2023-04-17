@@ -300,16 +300,15 @@ public class InvestigasiInsiden extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
-        Map<String, Object> updateStatusInsidens = new HashMap<>();
-        updateStatusInsidens.put("status_laporan_insiden", statusLaporanInsiden);
-        updateStatusInsidens.put("diupdate_insiden", tglDiupdate);
-        updateStatusInsidens.put("kategori_insiden", kategoriIs);
-        updateStatusInsidens.put("tenggat_waktu_insiden", waktuTenggat);
-        updateStatusInsidens.put("tindakan_insiden", tindakanYg);
-        updateStatusInsidens.put("id_p2k3", idP2K3);
-        updateStatusInsidens.put("nama_p2k3", namaP2K3);
-
-        mInsidenRef.set(updateStatusInsidens, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
+        Map<String, Object> updateInsidens = new HashMap<>();
+        updateInsidens.put("status_laporan_insiden", statusLaporanInsiden);
+        updateInsidens.put("diupdate_insiden", tglDiupdate);
+        updateInsidens.put("kategori_insiden", kategoriIs);
+        updateInsidens.put("tenggat_waktu_insiden", waktuTenggat);
+        updateInsidens.put("tindakan_insiden", tindakanYg);
+        updateInsidens.put("id_p2k3", idP2K3);
+        updateInsidens.put("nama_p2k3", namaP2K3);
+        mInsidenRef.set(updateInsidens, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.w(TAG, "Berhasil");

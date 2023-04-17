@@ -1032,6 +1032,8 @@ public class LaporPotensiBahaya extends AppCompatActivity {
         laporPotensiBahaya.put("diupdate_pb", tglDiupdate);
         laporPotensiBahaya.put("status_deleted_pb", false);
         laporPotensiBahaya.put("status_laporan_pb", "Pending");
+        laporPotensiBahaya.put("id_p2k3_pb","");
+        laporPotensiBahaya.put("nama_p2k3_pb", "");
         documentReference.set(laporPotensiBahaya).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

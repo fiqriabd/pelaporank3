@@ -6,21 +6,25 @@ public class LaporInsidensModel {
             lokasi_rinci_insiden, jenis_insiden, kronologi_insiden, penyebab_insiden, nama_pelapor_insiden,
             email_pelapor_insiden, nomor_telepon_pelapor_insiden, unit_pelapor_insiden, nama_korban_insiden,
             email_korban_insiden, nomer_telepon_korban_insiden, unit_korban_insiden, gambar_insiden,
-            dibuat_insiden, diupdate_insiden, id_user, status_laporan_insiden;
+            dibuat_insiden, diupdate_insiden, id_user, status_laporan_insiden, kategori_insiden,
+            tenggat_waktu_insiden, tindakan_insiden, id_p2k3, nama_p2k3;
 
     Boolean status_deleted_insiden;
 
     public LaporInsidensModel() {
     }
 
-    public LaporInsidensModel(String kode_laporinsiden, String tanda_pengenal_insiden, String waktu_kejadian_insiden,
-                              String lokasi_departemen_insiden, String lokasi_rinci_insiden, String jenis_insiden,
-                              String kronologi_insiden, String penyebab_insiden, String nama_pelapor_insiden,
+    public LaporInsidensModel(String kode_laporinsiden, String tanda_pengenal_insiden,
+                              String waktu_kejadian_insiden, String lokasi_departemen_insiden,
+                              String lokasi_rinci_insiden, String jenis_insiden, String kronologi_insiden,
+                              String penyebab_insiden, String nama_pelapor_insiden,
                               String email_pelapor_insiden, String nomor_telepon_pelapor_insiden,
-                              String unit_pelapor_insiden, String nama_korban_insiden, String email_korban_insiden,
-                              String nomer_telepon_korban_insiden, String unit_korban_insiden,
-                              String gambar_insiden, String dibuat_insiden, String diupdate_insiden,
-                              String id_user, Boolean status_deleted_insiden, String status_laporan_insiden) {
+                              String unit_pelapor_insiden, String nama_korban_insiden,
+                              String email_korban_insiden, String nomer_telepon_korban_insiden,
+                              String unit_korban_insiden, String gambar_insiden, String dibuat_insiden,
+                              String diupdate_insiden, String id_user, String status_laporan_insiden,
+                              String kategori_insiden, String tenggat_waktu_insiden, String tindakan_insiden,
+                              String id_p2k3, String nama_p2k3, Boolean status_deleted_insiden) {
         this.kode_laporinsiden = kode_laporinsiden;
         this.tanda_pengenal_insiden = tanda_pengenal_insiden;
         this.waktu_kejadian_insiden = waktu_kejadian_insiden;
@@ -41,8 +45,13 @@ public class LaporInsidensModel {
         this.dibuat_insiden = dibuat_insiden;
         this.diupdate_insiden = diupdate_insiden;
         this.id_user = id_user;
-        this.status_deleted_insiden = status_deleted_insiden;
         this.status_laporan_insiden = status_laporan_insiden;
+        this.kategori_insiden = kategori_insiden;
+        this.tenggat_waktu_insiden = tenggat_waktu_insiden;
+        this.tindakan_insiden = tindakan_insiden;
+        this.id_p2k3 = id_p2k3;
+        this.nama_p2k3 = nama_p2k3;
+        this.status_deleted_insiden = status_deleted_insiden;
     }
 
     public String getKode_laporinsiden() {
@@ -205,19 +214,59 @@ public class LaporInsidensModel {
         this.id_user = id_user;
     }
 
+    public String getStatus_laporan_insiden() {
+        return status_laporan_insiden;
+    }
+
+    public void setStatus_laporan_insiden(String status_laporan_insiden) {
+        this.status_laporan_insiden = status_laporan_insiden;
+    }
+
+    public String getKategori_insiden() {
+        return kategori_insiden;
+    }
+
+    public void setKategori_insiden(String kategori_insiden) {
+        this.kategori_insiden = kategori_insiden;
+    }
+
+    public String getTenggat_waktu_insiden() {
+        return tenggat_waktu_insiden;
+    }
+
+    public void setTenggat_waktu_insiden(String tenggat_waktu_insiden) {
+        this.tenggat_waktu_insiden = tenggat_waktu_insiden;
+    }
+
+    public String getTindakan_insiden() {
+        return tindakan_insiden;
+    }
+
+    public void setTindakan_insiden(String tindakan_insiden) {
+        this.tindakan_insiden = tindakan_insiden;
+    }
+
+    public String getId_p2k3() {
+        return id_p2k3;
+    }
+
+    public void setId_p2k3(String id_p2k3) {
+        this.id_p2k3 = id_p2k3;
+    }
+
+    public String getNama_p2k3() {
+        return nama_p2k3;
+    }
+
+    public void setNama_p2k3(String nama_p2k3) {
+        this.nama_p2k3 = nama_p2k3;
+    }
+
     public Boolean getStatus_deleted_insiden() {
         return status_deleted_insiden;
     }
 
     public void setStatus_deleted_insiden(Boolean status_deleted_insiden) {
         this.status_deleted_insiden = status_deleted_insiden;
-    }
-
-    public String getStatus_laporan_insiden(){
-        return status_laporan_insiden;
-    }
-
-    public void setStatus_laporan_insiden(String status_laporan_insiden) {
-        this.status_laporan_insiden = status_laporan_insiden;
     }
 }

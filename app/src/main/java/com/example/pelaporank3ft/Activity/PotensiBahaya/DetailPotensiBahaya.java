@@ -39,7 +39,7 @@ public class DetailPotensiBahaya extends AppCompatActivity {
     private ImageView imgFotoTandaPengenal, imgFotoPB;
     private TextView tvStatusLaporan, tvKodePB, tvTglLapor, tvNamaPelapor, tvEmailPelapor, tvNipNim,
             tvNoTelpPelapor, tvKategoriPelapor, tvInstitusi, tvTujuan, tvUCAkademika, tvLokasiPB,
-            tvPotensiBahaya, tvDeskripsiPB, tvResikoPB, tvUsulanPerbaikan;
+            tvPotensiBahaya, tvDeskripsiPB, tvResikoPB, tvUsulanPerbaikan, tvNamaP2K3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +76,7 @@ public class DetailPotensiBahaya extends AppCompatActivity {
         tvResikoPB = findViewById(R.id.tv_lpb_detail_resiko_bahaya);
         tvUsulanPerbaikan = findViewById(R.id.tv_lpb_detail_usulan_perbaikan);
         imgFotoPB = findViewById(R.id.img_detail_foto_kejadian_pb);
+        tvNamaP2K3 = findViewById(R.id.tv_detail_nama_p2k3_pb);
     }
 
     private void getDataPB() {
@@ -135,6 +136,7 @@ public class DetailPotensiBahaya extends AppCompatActivity {
                                 .load(document.getString("gambar_pb"))
                                 .into(imgFotoPB);
                         progressDialog.dismiss();
+                        tvNamaP2K3.setText(document.getString("nama_p2k3_pb"));
 
                         imgFotoTandaPengenal.setOnClickListener(new View.OnClickListener() {
                             @Override

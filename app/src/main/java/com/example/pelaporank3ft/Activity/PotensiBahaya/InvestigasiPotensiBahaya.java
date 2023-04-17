@@ -42,7 +42,7 @@ import java.util.Map;
 public class InvestigasiPotensiBahaya extends AppCompatActivity {
 
     public static final String DETAIL_EDIT_STATUS_PB = "kode_pb";
-    private DocumentReference mPBRef;
+    private DocumentReference mPBRef, mUserRef;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -52,7 +52,7 @@ public class InvestigasiPotensiBahaya extends AppCompatActivity {
     private AutoCompleteTextView statusPB;
     private ImageView imgFotoTandaPengenal, imgFotoPB;
     private MaterialButton btnSimpan;
-    private String statusLaporanPB, tglDiupdate;
+    private String statusLaporanPB, tglDiupdate, idP2K3, namaP2K3;
     private TextView tvKodePB, tvTglLapor, tvNamaPelapor, tvEmailPelapor, tvNipNim, tvNoTelpPelapor,
             tvKategoriPelapor, tvInstitusi, tvTujuan, tvUCAkademika, tvLokasiPB, tvPotensiBahaya,
             tvDeskripsiPB, tvResikoPB, tvUsulanPerbaikan;
@@ -66,11 +66,13 @@ public class InvestigasiPotensiBahaya extends AppCompatActivity {
         mFirestore = FirebaseFirestore.getInstance();
         mUser = mAuth.getCurrentUser();
         userId = mAuth.getCurrentUser().getUid();
+        mUserRef = mFirestore.collection("users").document(userId);
         String kodePB = getIntent().getExtras().getString(DETAIL_EDIT_STATUS_PB);
         mPBRef = mFirestore.collection("potensiBahayas").document(kodePB);
 
         initView();
         getDataPB();
+        getDataPengisi();
         getTanggal();
     }
 
@@ -219,6 +221,26 @@ public class InvestigasiPotensiBahaya extends AppCompatActivity {
         });
     }
 
+    private void getDataPengisi() {
+        mUserRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()){
+                        Log.d(TAG, "Dokumen Tersedia");
+                        idP2K3 = document.getString("id_user");
+                        namaP2K3 = document.getString("name_user");
+                    } else {
+                        Log.d(TAG, "Tidak ada Dokumen");
+                    }
+                } else {
+                    Log.d(TAG, "Gagal mendapatkan data: ", task.getException());
+                }
+            }
+        });
+    }
+
     private void getTanggal() {
         Locale lokal = new Locale("in", "ID");
         DateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", lokal);
@@ -234,11 +256,12 @@ public class InvestigasiPotensiBahaya extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
-        Map<String, Object> updateStatusPBs = new HashMap<>();
-        updateStatusPBs.put("status_laporan_pb", statusLaporanPB);
-        updateStatusPBs.put("diupdate_pb", tglDiupdate);
-
-        mPBRef.set(updateStatusPBs, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
+        Map<String, Object> updatePBs = new HashMap<>();
+        updatePBs.put("status_laporan_pb", statusLaporanPB);
+        updatePBs.put("diupdate_pb", tglDiupdate);
+        updatePBs.put("id_p2k3_pb", idP2K3);
+        updatePBs.put("nama_p2k3_pb", namaP2K3);
+        mPBRef.set(updatePBs, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.w(TAG, "Berhasil");
