@@ -68,6 +68,9 @@ public class PotensiBahayaAdapter extends FirestoreAdapter<PotensiBahayaAdapter.
             if (Objects.equals(model.getStatus_laporan_pb(), "Pending")){
                 statusLaporan.setText("Pending");
                 statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.red));
+            } else if (Objects.equals(model.getStatus_laporan_pb(), "Ditindaklanjuti")) {
+                statusLaporan.setText("Ditindaklanjuti");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.oren));
             } else {
                 statusLaporan.setText("Disetujui");
                 statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.green));

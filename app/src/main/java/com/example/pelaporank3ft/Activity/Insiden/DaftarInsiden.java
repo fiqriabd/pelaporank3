@@ -52,7 +52,7 @@ public class DaftarInsiden extends AppCompatActivity implements DaftarInsidenAda
     private FloatingActionButton btnTambahInsiden;
     private ProgressBar pbInsiden;
     private RecyclerView daftarInsidenRec;
-    private String userPengisi, userIn, idPengisi, tipePengisi, tglDiupdate;
+    private String userPengisi, userIn, idPengisi, tipePengisi, tglDiupdate, tipeUser;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -62,7 +62,7 @@ public class DaftarInsiden extends AppCompatActivity implements DaftarInsidenAda
 
     private AlertDialog dialog;
     private ImageButton btnClose;
-    private Button btnDetail, btnEditStatusLaporan, btnHapus;
+    private Button btnDetail, btnInvestigasi, btnHapus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,16 +180,16 @@ public class DaftarInsiden extends AppCompatActivity implements DaftarInsidenAda
                                 builder.setView(view);
                                 btnClose = view.findViewById(R.id.btn_close);
                                 btnDetail = view.findViewById(R.id.btn_detail);
-                                btnEditStatusLaporan = view.findViewById(R.id.btn_edit_status_laporan);
+                                btnInvestigasi = view.findViewById(R.id.btn_investigasi);
                                 btnHapus = view.findViewById(R.id.btn_hapus);
                                 dialog = builder.create();
                                 Log.d(TAG, "User Sekarang: "+userIn);
 
                                 btnDetail.setEnabled(userIn.equals(idPengisi)||tipePengisi.equals("p2k3"));
                                 if (!Objects.equals(tipePengisi, "p2k3")){
-                                    btnEditStatusLaporan.setVisibility(View.GONE);
+                                    btnInvestigasi.setVisibility(View.GONE);
                                 } else {
-                                    btnEditStatusLaporan.setVisibility(View.VISIBLE);
+                                    btnInvestigasi.setVisibility(View.VISIBLE);
                                 }
                                 btnHapus.setEnabled(userIn.equals(idPengisi)||tipePengisi.equals("p2k3"));
 
@@ -223,7 +223,7 @@ public class DaftarInsiden extends AppCompatActivity implements DaftarInsidenAda
                                     }
                                 });
 
-                                btnEditStatusLaporan.setOnClickListener(new View.OnClickListener() {
+                                btnInvestigasi.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         final DocumentReference docInsidenRef = insidenModel.getReference();
@@ -231,8 +231,8 @@ public class DaftarInsiden extends AppCompatActivity implements DaftarInsidenAda
                                             @Override
                                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                                 DocumentSnapshot document = task.getResult();
-                                                Intent intent = new Intent(DaftarInsiden.this, EditStatusInsiden.class);
-                                                intent.putExtra(EditStatusInsiden.DETAIL_EDIT_STATUS_INSIDEN, document.getString("kode_laporinsiden"));
+                                                Intent intent = new Intent(DaftarInsiden.this, InvestigasiInsiden.class);
+                                                intent.putExtra(InvestigasiInsiden.DETAIL_EDIT_STATUS_INSIDEN, document.getString("kode_laporinsiden"));
                                                 startActivity(intent);
                                                 dialog.dismiss();
                                             }

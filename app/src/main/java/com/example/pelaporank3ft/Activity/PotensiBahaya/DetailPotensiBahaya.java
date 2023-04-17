@@ -106,6 +106,9 @@ public class DetailPotensiBahaya extends AppCompatActivity {
                         if (statusLaporan.equals("Pending")){
                             tvStatusLaporan.setText("Pending");
                             tvStatusLaporan.setTextColor(getColor(R.color.red));
+                        } else if (statusLaporan.equals("Ditindaklanjuti")) {
+                            tvStatusLaporan.setText("Ditindaklanjuti");
+                            tvStatusLaporan.setTextColor(getColor(R.color.oren));
                         } else{
                             tvStatusLaporan.setText("Disetujui");
                             tvStatusLaporan.setTextColor(getColor(R.color.green));

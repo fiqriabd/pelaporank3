@@ -20,8 +20,8 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.pelaporank3ft.Activity.Insiden.EditStatusInsiden;
-import com.example.pelaporank3ft.Activity.PotensiBahaya.EditStatusPotensiBahaya;
+import com.example.pelaporank3ft.Activity.Insiden.InvestigasiInsiden;
+import com.example.pelaporank3ft.Activity.PotensiBahaya.InvestigasiPotensiBahaya;
 import com.example.pelaporank3ft.Adapter.NotifikasiInsidenAdapter;
 import com.example.pelaporank3ft.Adapter.NotifikasiPBAdapter;
 import com.example.pelaporank3ft.R;
@@ -232,8 +232,8 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
                 progressDialog.dismiss();
-                Intent intent = new Intent(getContext(), EditStatusInsiden.class);
-                intent.putExtra(EditStatusInsiden.DETAIL_EDIT_STATUS_INSIDEN, document.getString("kode_laporinsiden"));
+                Intent intent = new Intent(getContext(), InvestigasiInsiden.class);
+                intent.putExtra(InvestigasiInsiden.DETAIL_EDIT_STATUS_INSIDEN, document.getString("kode_laporinsiden"));
                 startActivity(intent);
             }
         });
@@ -252,8 +252,8 @@ public class NotifikasiFragment extends Fragment implements NotifikasiInsidenAda
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 DocumentSnapshot document = task.getResult();
                 progressDialog.dismiss();
-                Intent intent = new Intent(getContext(), EditStatusPotensiBahaya.class);
-                intent.putExtra(EditStatusPotensiBahaya.DETAIL_EDIT_STATUS_PB, document.getString("kode_potensibahaya"));
+                Intent intent = new Intent(getContext(), InvestigasiPotensiBahaya.class);
+                intent.putExtra(InvestigasiPotensiBahaya.DETAIL_EDIT_STATUS_PB, document.getString("kode_potensibahaya"));
                 startActivity(intent);
             }
         });

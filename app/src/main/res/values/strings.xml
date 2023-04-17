@@ -174,7 +174,15 @@
     <string name="status_laporan_label">Status Laporan</string>
     <string name="notifikasi_laporan_insiden_label">[Laporan Insiden]</string>
     <string name="notifikasi_laporan_pb_label">[Laporan Potensi Bahaya]</string>
-    <string name="edit_status_laporan">Edit Status Laporan</string>
+    <string name="investigasi_label">Investigasi</string>
+    <string name="kategori_insiden_label">Kategori Insiden</string>
+    <string name="tenggat_waktu_label">Tenggat Waktu</string>
+    <string name="tindakan_label">Tindakan Yang Diberikan</string>
+    <string name="kategori_insiden_label_">Kategori Insiden <font color='#FF0000'>*</font></string>
+    <string name="tenggat_waktu_label_">Tenggat Waktu <font color='#FF0000'>*</font></string>
+    <string name="tindakan_label_">Tindakan Yang Diberikan <font color='#FF0000'>*</font></string>
+    <string name="nama_p2k3_label">Nama P2K3</string>
+    <string name="tindakan_yg_label">Tindakan Yg Diberikan</string>
     <string-array name="departemenft">
         <item>Teknik Sipil</item>
         <item>Arsitektur</item>
@@ -192,6 +200,7 @@
     </string-array>
     <string-array name="status">
         <item>Pending</item>
+        <item>Ditindaklanjuti</item>
         <item>Disetujui</item>
     </string-array>
     <string-array name="jenisinsiden">
@@ -222,5 +231,10 @@
         <item>Biologis</item>
         <item>Ergonomi</item>
         <item>Psikologis</item>
+    </string-array>
+    <string-array name="kategoriinsiden">
+        <item>Near-Miss</item>
+        <item>Minor Injury</item>
+        <item>Major Injury</item>
     </string-array>
 </resources>

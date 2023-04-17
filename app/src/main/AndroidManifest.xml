@@ -92,9 +92,9 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Activity.Insiden.EditStatusInsiden"
+            android:name=".Activity.Insiden.InvestigasiInsiden"
             android:exported="true"
-            android:label="Edit Status Insiden"
+            android:label="Investigasi Insiden"
             android:parentActivityName=".Activity.Insiden.DaftarInsiden"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -106,9 +106,9 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Activity.PotensiBahaya.EditStatusPotensiBahaya"
+            android:name=".Activity.PotensiBahaya.InvestigasiPotensiBahaya"
             android:exported="true"
-            android:label="Edit Status Potensi Bahaya"
+            android:label="Investigasi Potensi Bahaya"
             android:parentActivityName=".Activity.PotensiBahaya.DaftarPotensiBahaya"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

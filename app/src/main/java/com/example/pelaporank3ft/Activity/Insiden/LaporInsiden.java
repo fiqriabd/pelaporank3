@@ -1024,6 +1024,11 @@ public class LaporInsiden extends AppCompatActivity {
         laporInsiden.put("diupdate_insiden", tglDiupdate);
         laporInsiden.put("status_deleted_insiden", false);
         laporInsiden.put("status_laporan_insiden", "Pending");
+        laporInsiden.put("kategori_insiden", "");
+        laporInsiden.put("tenggat_waktu_insiden", "");
+        laporInsiden.put("tindakan_insiden", "");
+        laporInsiden.put("id_p2k3","");
+        laporInsiden.put("nama_p2k3", "");
         documentReference.set(laporInsiden).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

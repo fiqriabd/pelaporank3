@@ -49,10 +49,10 @@
             android:textAllCaps="false"/>
 
         <Button
-            android:id="@+id/btn_edit_status_laporan"
+            android:id="@+id/btn_investigasi"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
-            android:text="@string/edit_status_laporan"
+            android:text="@string/investigasi_label"
             android:textSize="@dimen/_15ssp"
             android:textAllCaps="false"/>
 

@@ -39,7 +39,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class EditStatusPotensiBahaya extends AppCompatActivity {
+public class InvestigasiPotensiBahaya extends AppCompatActivity {
 
     public static final String DETAIL_EDIT_STATUS_PB = "kode_pb";
     private DocumentReference mPBRef;
@@ -60,7 +60,7 @@ public class EditStatusPotensiBahaya extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_status_potensi_bahaya);
+        setContentView(R.layout.activity_investigasi_potensi_bahaya);
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
@@ -102,7 +102,7 @@ public class EditStatusPotensiBahaya extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
-        AlertDialog alertDialog = new AlertDialog.Builder(EditStatusPotensiBahaya.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(InvestigasiPotensiBahaya.this).create();
         alertDialog.setMessage("Gagal menampilkan data");
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
@@ -154,7 +154,7 @@ public class EditStatusPotensiBahaya extends AppCompatActivity {
                         imgFotoTandaPengenal.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(EditStatusPotensiBahaya.this);
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(InvestigasiPotensiBahaya.this);
                                 View view_pb = getLayoutInflater().inflate(R.layout.dialog_img_full, null);
                                 builder.setView(view_pb);
 
@@ -178,7 +178,7 @@ public class EditStatusPotensiBahaya extends AppCompatActivity {
                         imgFotoPB.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(EditStatusPotensiBahaya.this);
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(InvestigasiPotensiBahaya.this);
                                 View view_pb = getLayoutInflater().inflate(R.layout.dialog_img_full, null);
                                 builder.setView(view_pb);
 
@@ -244,14 +244,14 @@ public class EditStatusPotensiBahaya extends AppCompatActivity {
                 Log.w(TAG, "Berhasil");
                 progressDialog.dismiss();
                 onBackPressed();
-                Toast.makeText(EditStatusPotensiBahaya.this, "Status Laporan Potensi Bahaya berhasil diubah", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InvestigasiPotensiBahaya.this, "Data Investigasi Potensi Bahaya berhasil disimpan", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.w(TAG, "Gagal", e);
                 progressDialog.dismiss();
-                Toast.makeText(EditStatusPotensiBahaya.this, "Gagal memperbarui Status Laporan Potensi Bahaya", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InvestigasiPotensiBahaya.this, "Gagal menyimpan Data Investigasi Potensi Bahaya", Toast.LENGTH_SHORT).show();
             }
         });
     }

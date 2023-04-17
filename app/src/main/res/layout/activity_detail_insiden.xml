@@ -543,6 +543,118 @@
                         android:src="@drawable/img_example"/>
 
                 </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtnamap2k3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/nama_p2k3_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_nama_p2k3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txtkategoriinsiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/kategori_insiden_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_kategori_insiden"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txttenggatwaktu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/tenggat_waktu_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_tenggat_waktu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_border"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/txttindakan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:text="@string/tindakan_yg_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_tindakan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                </TableRow>
             </TableLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

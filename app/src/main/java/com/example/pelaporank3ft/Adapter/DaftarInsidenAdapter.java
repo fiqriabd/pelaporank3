@@ -72,7 +72,10 @@ public class DaftarInsidenAdapter extends FirestoreAdapter<DaftarInsidenAdapter.
             if (Objects.equals(model.getStatus_laporan_insiden(), "Pending")){
                 statusLaporan.setText("Pending");
                 statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.red));
-            } else {
+            } else if (Objects.equals(model.getStatus_laporan_insiden(), "Ditindaklanjuti")) {
+                statusLaporan.setText("Ditindaklanjuti");
+                statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.oren));
+            } else if (Objects.equals(model.getStatus_laporan_insiden(), "Disetujui")){
                 statusLaporan.setText("Disetujui");
                 statusLaporan.setTextColor(ContextCompat.getColor((Context) listener, R.color.green));
             }

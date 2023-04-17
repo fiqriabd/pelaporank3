@@ -58,7 +58,7 @@ public class DaftarPotensiBahaya extends AppCompatActivity implements PotensiBah
 
     private AlertDialog dialog;
     private ImageButton btnClose;
-    private Button btnDetail, btnEditStatusLaporan, btnHapus;
+    private Button btnDetail, btnInvestigasi, btnHapus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,7 +167,7 @@ public class DaftarPotensiBahaya extends AppCompatActivity implements PotensiBah
                                 builder.setView(view);
                                 btnClose = view.findViewById(R.id.btn_close);
                                 btnDetail = view.findViewById(R.id.btn_detail);
-                                btnEditStatusLaporan = view.findViewById(R.id.btn_edit_status_laporan);
+                                btnInvestigasi = view.findViewById(R.id.btn_investigasi);
                                 btnHapus = view.findViewById(R.id.btn_hapus);
 
                                 dialog = builder.create();
@@ -175,9 +175,9 @@ public class DaftarPotensiBahaya extends AppCompatActivity implements PotensiBah
 
                                 btnDetail.setEnabled(userIn.equals(idPengisi)||tipePengisi.equals("p2k3"));
                                 if (!Objects.equals(tipePengisi, "p2k3")){
-                                    btnEditStatusLaporan.setVisibility(View.GONE);
+                                    btnInvestigasi.setVisibility(View.GONE);
                                 } else {
-                                    btnEditStatusLaporan.setVisibility(View.VISIBLE);
+                                    btnInvestigasi.setVisibility(View.VISIBLE);
                                 }
                                 btnHapus.setEnabled(userIn.equals(idPengisi)||tipePengisi.equals("p2k3"));
 
@@ -211,7 +211,7 @@ public class DaftarPotensiBahaya extends AppCompatActivity implements PotensiBah
                                     }
                                 });
 
-                                btnEditStatusLaporan.setOnClickListener(new View.OnClickListener() {
+                                btnInvestigasi.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
                                         final DocumentReference docPBRef = PBahayaModel.getReference();
@@ -219,8 +219,8 @@ public class DaftarPotensiBahaya extends AppCompatActivity implements PotensiBah
                                             @Override
                                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                                 DocumentSnapshot document = task.getResult();
-                                                Intent intent = new Intent(DaftarPotensiBahaya.this, EditStatusPotensiBahaya.class);
-                                                intent.putExtra(EditStatusPotensiBahaya.DETAIL_EDIT_STATUS_PB, document.getString("kode_potensibahaya"));
+                                                Intent intent = new Intent(DaftarPotensiBahaya.this, InvestigasiPotensiBahaya.class);
+                                                intent.putExtra(InvestigasiPotensiBahaya.DETAIL_EDIT_STATUS_PB, document.getString("kode_potensibahaya"));
                                                 startActivity(intent);
                                                 dialog.dismiss();
                                             }

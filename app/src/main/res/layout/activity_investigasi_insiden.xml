@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blueFB"
-    tools:context=".Activity.PotensiBahaya.EditStatusPotensiBahaya">
+    tools:context=".Activity.Insiden.InvestigasiInsiden">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/linearlayout_statuslaporanpb"
+                android:id="@+id/linearlayout_statuslaporaninsiden"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_4sdp"
@@ -45,12 +45,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_4sdp"
                         android:fontFamily="@font/notosansjpregular"
                         android:text="@string/status_laporan_label"
-                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -63,14 +61,85 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <AutoCompleteTextView
-                            android:id="@+id/ddstatus_laporan_pb_notifikasi"
+                            android:id="@+id/ddstatus_laporan_insiden_notifikasi"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:inputType="none"
-                            android:textAlignment="center"/>
+                            android:inputType="none" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/kategori_insiden_label_"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pilih"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/ddkategori_insiden_notifikasi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/tenggat_waktu_label_"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/tenggat_waktu_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:focusable="false"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary"
+                        android:editable="false"
+                        tools:ignore="Deprecated"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:text="@string/tindakan_label_"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/tindakan_yg_diberikan_insiden"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/bg_input_edit"
+                        android:fontFamily="@font/notosansjpregular"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingStart="@dimen/_9sdp"
+                        android:paddingEnd="@dimen/_9sdp"
+                        android:textColor="@color/blackPrimary" />
                 </LinearLayout>
 
                 <TableLayout
@@ -83,22 +152,22 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtkode_pb"
+                            android:id="@+id/txtkodeinsiden"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/kode_potensi_bahaya_label"
+                            android:text="@string/kode_insiden_label"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_detail_kode_pb_notifikasi"
+                            android:id="@+id/tv_detail_kode_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -112,22 +181,22 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txttanggallapor"
+                            android:id="@+id/txtwaktukejadian"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/tanggal_lapor_labels"
+                            android:text="@string/waktu_kejadian_labels"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_detail_tanggal_lapor_pb_notifikasi"
+                            android:id="@+id/tv_detail_waktu_kejadian_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -141,11 +210,152 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtfototandapengenal_pb"
+                            android:id="@+id/txtlokasikejadian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/lokasi_labels"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_lokasi_kejadian_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtlokasirinci"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/lokasi_rinci_labels"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_lokasi_rinci_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtjenisinsiden"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/jenis_insiden_labels"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_jenis_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtkronologikejadian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/kronologi_labels"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_kronologi_kejadian_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtpenyebabinsiden"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/penyebab_insiden_labels"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_penyebab_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtfototandapengenal_insiden"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
@@ -156,7 +366,7 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/img_detail_foto_tp_pb_notifikasi"
+                            android:id="@+id/img_detail_foto_tp_insiden_notifikasi"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_100sdp"
                             android:scaleType="fitStart"
@@ -169,8 +379,8 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
                             android:id="@+id/txtnamapelapor"
@@ -184,7 +394,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_lpb_detail_nama_pelapor_notifikasi"
+                            android:id="@+id/tv_detail_nama_pelapor_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -198,11 +408,11 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtemailpelapor_pb"
+                            android:id="@+id/txtemailpelapor_insiden"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
@@ -213,7 +423,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_detail_email_pelapor_pb_notifikasi"
+                            android:id="@+id/tv_detail_email_pelapor_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -227,37 +437,8 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtnipnimpelapor"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/nip_nim_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_detail_nip_nim_pelapor_pb_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
                             android:id="@+id/txtnoteleponpelapor"
@@ -271,7 +452,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_lpb_detail_notelepon_pelapor_notifikasi"
+                            android:id="@+id/tv_detail_notelepon_pelapor_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -285,22 +466,78 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtkategoripelapor"
+                            android:id="@+id/txtunitpelapor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/kategori_pelapor_labels"
+                            android:text="@string/unit_pelapor_label"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_lpb_detail_kategori_pelapor_notifikasi"
+                            android:id="@+id/tv_detail_unit_pelapor_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtnamakorban"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/nama_korban_label"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_nama_korban_insiden_notifikasi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/txtemailkorban"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="@string/email_korban_label"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_email_korban_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -314,78 +551,22 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtinstitusi"
+                            android:id="@+id/txtnoteleponkorban"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/institusi_yang_dikunjungi_label"
+                            android:text="@string/no_telepon_korban_label"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_lpb_detail_institusi_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txttujuan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/tujuan_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_tujuan_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtunit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/unit_civitas_akademika_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_unit_ca_notifikasi"
+                            android:id="@+id/tv_detail_notelepon_korban_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_column="1"
@@ -399,51 +580,22 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtlokasipotensibahaya"
+                            android:id="@+id/txtunitkorban"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/lokasi_potensi_bahaya_labels"
+                            android:text="@string/unit_korban_label"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_lpb_detail_lokasi_pb_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_column="1"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtpotensibahaya"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/potensi_bahaya_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_potensi_bahaya_notifikasi"
+                            android:id="@+id/tv_detail_unit_korban_insiden_notifikasi"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_11sdp"
@@ -456,106 +608,22 @@
                     <TableRow
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
+                        android:background="@drawable/cell_border"
+                        android:padding="@dimen/_2sdp">
 
                         <TextView
-                            android:id="@+id/txtdeskripsipb"
+                            android:id="@+id/txtfotokejadian_insiden"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_column="0"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/deskripsi_p_bahaya_label"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_deskripsi_pb_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtresikobahaya"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/resiko_bahaya_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_resiko_bahaya_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtusulanperbaikan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/usulan_perbaikan_labels"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_lpb_detail_usulan_perbaikan_notifikasi"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_11sdp"
-                            android:layout_marginEnd="@dimen/_8sdp"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11ssp" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/_2sdp"
-                        android:background="@drawable/cell_border">
-
-                        <TextView
-                            android:id="@+id/txtfotokejadian_pb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_column="0"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:text="@string/foto_pb_labels"
+                            android:text="@string/foto_kejadian_labels"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_11ssp"
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/img_detail_foto_kejadian_pb_notifikasi"
+                            android:id="@+id/img_detail_foto_kejadian_insiden_notifikasi"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_100sdp"
                             android:scaleType="fitStart"
@@ -567,7 +635,7 @@
                 </TableLayout>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_submit_status_pb_notifikasi"
+                    android:id="@+id/btn_submit_status_insiden_notifikasi"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     android:layout_marginLeft="@dimen/_19sdp"
@@ -583,5 +651,4 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

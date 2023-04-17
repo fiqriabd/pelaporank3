@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,48 +37,58 @@ import com.google.firebase.firestore.SetOptions;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class EditStatusInsiden extends AppCompatActivity {
+public class InvestigasiInsiden extends AppCompatActivity {
 
     public static final String DETAIL_EDIT_STATUS_INSIDEN = "kode_insiden";
-    private DocumentReference mInsidenRef;
+    private DocumentReference mInsidenRef, mUserRef;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseUser mUser;
     private String userId;
 
-    private AutoCompleteTextView statusInsiden;
+    private DatePickerDialog tenggatWaktuInsiden;
+    private SimpleDateFormat formatTanggalInsiden;
+
+    private AutoCompleteTextView statusInsiden, kategoriInsiden;
+    private EditText tvTenggatWaktu, tvTindakan;
     private MaterialButton btnSimpan;
     private ImageView imgFotoTandaPengenal, imgFotoKejadianInsiden;
-    private String statusLaporanInsiden, tglDiupdate;
-    private TextView tvKodeInsiden, tvWaktuKejadian, tvLokasi, tvLokasiRinci, tvJenisInsiden,
+    private String statusLaporanInsiden, idP2K3, namaP2K3, kategoriIs, waktuTenggat, tindakanYg, tglDiupdate;
+    private TextView tvKodeInsiden, tvLokasi, tvWaktuKejadian, tvLokasiRinci, tvJenisInsiden,
             tvKronologi, tvPenyebabInsiden, tvNamaPelapor, tvEmailPelapor, tvNoTeleponPelapor,
             tvUnitPelapor, tvNamaKorban, tvEmailKorban, tvNoTeleponKorban, tvUnitKorban;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_status_insiden);
+        setContentView(R.layout.activity_investigasi_insiden);
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
         mUser = mAuth.getCurrentUser();
         userId = mAuth.getCurrentUser().getUid();
+        mUserRef = mFirestore.collection("users").document(userId);
         String kodeInsiden = getIntent().getExtras().getString(DETAIL_EDIT_STATUS_INSIDEN);
         mInsidenRef = mFirestore.collection("laporInsidens").document(kodeInsiden);
 
         initView();
         getDataInsiden();
+        getDataPengisi();
         getTanggal();
     }
 
     private void initView() {
         statusInsiden = findViewById(R.id.ddstatus_laporan_insiden_notifikasi);
+        kategoriInsiden = findViewById(R.id.ddkategori_insiden_notifikasi);
+        tvTenggatWaktu = findViewById(R.id.tenggat_waktu_insiden);
+        tvTindakan = findViewById(R.id.tindakan_yg_diberikan_insiden);
         tvKodeInsiden = findViewById(R.id.tv_detail_kode_insiden_notifikasi);
         tvWaktuKejadian = findViewById(R.id.tv_detail_waktu_kejadian_insiden_notifikasi);
         tvLokasi = findViewById(R.id.tv_detail_lokasi_kejadian_insiden_notifikasi);
@@ -95,6 +107,26 @@ public class EditStatusInsiden extends AppCompatActivity {
         tvUnitKorban = findViewById(R.id.tv_detail_unit_korban_insiden_notifikasi);
         imgFotoKejadianInsiden = findViewById(R.id.img_detail_foto_kejadian_insiden_notifikasi);
         btnSimpan = findViewById(R.id.btn_submit_status_insiden_notifikasi);
+
+        //Format Tanggal
+        formatTanggalInsiden = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+
+        tvTenggatWaktu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tampilkan_tenggat_waktu();
+            }
+
+            private void tampilkan_tenggat_waktu() {
+                Calendar calendar_investigasi = Calendar.getInstance();
+                tenggatWaktuInsiden = new DatePickerDialog(InvestigasiInsiden.this, (view, year, month, dayOfMonth) -> {
+                    Calendar tglInsiden = Calendar.getInstance();
+                    tglInsiden.set(year, month, dayOfMonth);
+                    tvTenggatWaktu.setText(formatTanggalInsiden.format(tglInsiden.getTime()));
+                }, calendar_investigasi.get(Calendar.YEAR), calendar_investigasi.get(Calendar.MONTH), calendar_investigasi.get(Calendar.DAY_OF_MONTH));
+                tenggatWaktuInsiden.show();
+            }
+        });
     }
 
     private void getDataInsiden() {
@@ -103,7 +135,7 @@ public class EditStatusInsiden extends AppCompatActivity {
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);
 
-        AlertDialog alertDialog = new AlertDialog.Builder(EditStatusInsiden.this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(InvestigasiInsiden.this).create();
         alertDialog.setMessage("Gagal menampilkan data");
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
@@ -122,6 +154,9 @@ public class EditStatusInsiden extends AppCompatActivity {
                     if (document.exists()) {
                         Log.d(TAG, "Dokumen tersedia!");
                         statusInsiden.setText(document.getString("status_laporan_insiden"));
+                        kategoriInsiden.setText(document.getString("kategori_insiden"));
+                        tvTenggatWaktu.setText(document.getString("tenggat_waktu_insiden"));
+                        tvTindakan.setText(document.getString("tindakan_insiden"));
                         tvKodeInsiden.setText(document.getString("kode_laporinsiden"));
                         tvWaktuKejadian.setText(document.getString("waktu_kejadian_insiden"));
                         tvLokasi.setText(document.getString("lokasi_departemen_insiden"));
@@ -152,10 +187,17 @@ public class EditStatusInsiden extends AppCompatActivity {
                         statusInsiden.setAdapter(statusins);
                         statusins.notifyDataSetChanged();
 
+                        //Pilihan pada Kategori Insiden
+                        String[] kategoriinsidens = getResources().getStringArray(R.array.kategoriinsiden);
+                        ArrayAdapter<String> kategoris = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_item, kategoriinsidens);
+                        kategoris.setNotifyOnChange(true);
+                        kategoriInsiden.setAdapter(kategoris);
+                        kategoris.notifyDataSetChanged();
+
                         imgFotoTandaPengenal.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(EditStatusInsiden.this);
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(InvestigasiInsiden.this);
                                 View view = getLayoutInflater().inflate(R.layout.dialog_img_full, null);
                                 builder.setView(view);
 
@@ -179,7 +221,7 @@ public class EditStatusInsiden extends AppCompatActivity {
                         imgFotoKejadianInsiden.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(EditStatusInsiden.this);
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(InvestigasiInsiden.this);
                                 View view = getLayoutInflater().inflate(R.layout.dialog_img_full, null);
                                 builder.setView(view);
 
@@ -220,6 +262,26 @@ public class EditStatusInsiden extends AppCompatActivity {
         });
     }
 
+    private void getDataPengisi() {
+        mUserRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()){
+                        Log.d(TAG, "Dokumen Tersedia");
+                        idP2K3 = document.getString("id_user");
+                        namaP2K3 = document.getString("name_user");
+                    } else {
+                        Log.d(TAG, "Tidak ada Dokumen");
+                    }
+                } else {
+                    Log.d(TAG, "Gagal mendapatkan data: ", task.getException());
+                }
+            }
+        });
+    }
+
     private void getTanggal() {
         Locale lokal = new Locale("in", "ID");
         DateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", lokal);
@@ -229,6 +291,9 @@ public class EditStatusInsiden extends AppCompatActivity {
 
     private void updateStatusInsiden() {
         statusLaporanInsiden = statusInsiden.getText().toString().trim();
+        kategoriIs = kategoriInsiden.getText().toString().trim();
+        waktuTenggat = tvTenggatWaktu.getText().toString().trim();
+        tindakanYg = tvTindakan.getText().toString().trim();
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Mohon tunggu...");
@@ -238,6 +303,11 @@ public class EditStatusInsiden extends AppCompatActivity {
         Map<String, Object> updateStatusInsidens = new HashMap<>();
         updateStatusInsidens.put("status_laporan_insiden", statusLaporanInsiden);
         updateStatusInsidens.put("diupdate_insiden", tglDiupdate);
+        updateStatusInsidens.put("kategori_insiden", kategoriIs);
+        updateStatusInsidens.put("tenggat_waktu_insiden", waktuTenggat);
+        updateStatusInsidens.put("tindakan_insiden", tindakanYg);
+        updateStatusInsidens.put("id_p2k3", idP2K3);
+        updateStatusInsidens.put("nama_p2k3", namaP2K3);
 
         mInsidenRef.set(updateStatusInsidens, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -245,14 +315,14 @@ public class EditStatusInsiden extends AppCompatActivity {
                 Log.w(TAG, "Berhasil");
                 progressDialog.dismiss();
                 onBackPressed();
-                Toast.makeText(EditStatusInsiden.this, "Status Laporan Insiden berhasil diubah", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InvestigasiInsiden.this, "Data Investigasi Insiden berhasil disimpan", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.w(TAG, "Gagal", e);
                 progressDialog.dismiss();
-                Toast.makeText(EditStatusInsiden.this, "Gagal memperbarui Status Laporan Insiden", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InvestigasiInsiden.this, "Gagal menyimpan Data Investigasi Insiden", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -39,7 +39,8 @@ public class DetailInsiden extends AppCompatActivity {
     private ImageView imgFotoTandaPengenal, imgFotoKejadianInsiden;
     private TextView tvStatusLaporan, tvKodeInsiden, tvWaktuKejadian, tvLokasi, tvLokasiRinci, tvJenisInsiden,
             tvKronologi, tvPenyebabInsiden, tvNamaPelapor, tvEmailPelapor, tvNoTeleponPelapor,
-            tvUnitPelapor, tvNamaKorban, tvEmailKorban, tvNoTeleponKorban, tvUnitKorban;
+            tvUnitPelapor, tvNamaKorban, tvEmailKorban, tvNoTeleponKorban, tvUnitKorban, tvNamaP2K3,
+            tvKategoriInsiden, tvTenggatWaktu, tvTindakanInsiden;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,10 @@ public class DetailInsiden extends AppCompatActivity {
         tvNoTeleponKorban = findViewById(R.id.tv_detail_notelepon_korban_insiden);
         tvUnitKorban = findViewById(R.id.tv_detail_unit_korban_insiden);
         imgFotoKejadianInsiden = findViewById(R.id.img_detail_foto_kejadian_insiden);
+        tvNamaP2K3 = findViewById(R.id.tv_detail_nama_p2k3);
+        tvKategoriInsiden = findViewById(R.id.tv_detail_kategori_insiden);
+        tvTenggatWaktu = findViewById(R.id.tv_detail_tenggat_waktu);
+        tvTindakanInsiden = findViewById(R.id.tv_detail_tindakan);
     }
 
     private void getDataInsiden() {
@@ -105,7 +110,10 @@ public class DetailInsiden extends AppCompatActivity {
                         if (statusLaporan.equals("Pending")){
                             tvStatusLaporan.setText("Pending");
                             tvStatusLaporan.setTextColor(getColor(R.color.red));
-                        } else{
+                        } else if (statusLaporan.equals("Ditindaklanjuti")) {
+                            tvStatusLaporan.setText("Ditindaklanjuti");
+                            tvStatusLaporan.setTextColor(getColor(R.color.oren));
+                        } else if (statusLaporan.equals("Disetujui")){
                             tvStatusLaporan.setText("Disetujui");
                             tvStatusLaporan.setTextColor(getColor(R.color.green));
                         }
@@ -131,6 +139,10 @@ public class DetailInsiden extends AppCompatActivity {
                                 .load(document.getString("gambar_insiden"))
                                 .into(imgFotoKejadianInsiden);
                         progressDialog.dismiss();
+                        tvNamaP2K3.setText(document.getString("nama_p2k3"));
+                        tvKategoriInsiden.setText(document.getString("kategori_insiden"));
+                        tvTenggatWaktu.setText(document.getString("tenggat_waktu_insiden"));
+                        tvTindakanInsiden.setText(document.getString("tindakan_insiden"));
 
                         imgFotoTandaPengenal.setOnClickListener(new View.OnClickListener() {
                             @Override
