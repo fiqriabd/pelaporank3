@@ -139,7 +139,7 @@ public class DetailInsiden extends AppCompatActivity {
                                 .load(document.getString("gambar_insiden"))
                                 .into(imgFotoKejadianInsiden);
                         progressDialog.dismiss();
-                        tvNamaP2K3.setText(document.getString("nama_p2k3"));
+                        tvNamaP2K3.setText(document.getString("nama_p2k3_insiden"));
                         tvKategoriInsiden.setText(document.getString("kategori_insiden"));
                         tvTenggatWaktu.setText(document.getString("tenggat_waktu_insiden"));
                         tvTindakanInsiden.setText(document.getString("tindakan_insiden"));

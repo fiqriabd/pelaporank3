@@ -10,6 +10,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -295,6 +296,17 @@ public class InvestigasiInsiden extends AppCompatActivity {
         waktuTenggat = tvTenggatWaktu.getText().toString().trim();
         tindakanYg = tvTindakan.getText().toString().trim();
 
+        if (kategoriIs.isEmpty()) {
+            Toast.makeText(this, "Kategori Insiden tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }else if (TextUtils.isEmpty(waktuTenggat)){
+            Toast.makeText(this, "Waktu Tenggat tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }else if (TextUtils.isEmpty(tindakanYg)) {
+            Toast.makeText(this, "Tindakan Yang Diberikan tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Mohon tunggu...");
         progressDialog.show();
@@ -306,8 +318,8 @@ public class InvestigasiInsiden extends AppCompatActivity {
         updateInsidens.put("kategori_insiden", kategoriIs);
         updateInsidens.put("tenggat_waktu_insiden", waktuTenggat);
         updateInsidens.put("tindakan_insiden", tindakanYg);
-        updateInsidens.put("id_p2k3", idP2K3);
-        updateInsidens.put("nama_p2k3", namaP2K3);
+        updateInsidens.put("id_p2k3_insiden", idP2K3);
+        updateInsidens.put("nama_p2k3_insiden", namaP2K3);
         mInsidenRef.set(updateInsidens, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

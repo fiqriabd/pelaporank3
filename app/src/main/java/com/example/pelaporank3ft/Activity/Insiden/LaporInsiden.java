@@ -1027,8 +1027,8 @@ public class LaporInsiden extends AppCompatActivity {
         laporInsiden.put("kategori_insiden", "");
         laporInsiden.put("tenggat_waktu_insiden", "");
         laporInsiden.put("tindakan_insiden", "");
-        laporInsiden.put("id_p2k3","");
-        laporInsiden.put("nama_p2k3", "");
+        laporInsiden.put("id_p2k3_insiden","");
+        laporInsiden.put("nama_p2k3_insiden", "");
         documentReference.set(laporInsiden).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
