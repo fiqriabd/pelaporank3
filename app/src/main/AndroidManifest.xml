@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29"/>
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-feature
@@ -17,6 +19,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/logo_k3"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/logo_k3_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PelaporanK3FT"
@@ -43,6 +46,7 @@
             android:name=".Activity.Auth.RegisterActivity"
             android:exported="true"
             android:label="Daftar User"
+            android:noHistory="true"
             android:parentActivityName=".Activity.Auth.LoginActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

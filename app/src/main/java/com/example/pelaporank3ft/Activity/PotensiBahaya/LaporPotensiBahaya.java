@@ -161,6 +161,7 @@ public class LaporPotensiBahaya extends AppCompatActivity {
                     tglPotensiBahaya.set(year, month, dayOfMonth);
                     etTglLapor.setText(formatTanggalPotensiBahaya.format(tglPotensiBahaya.getTime()));
                 }, calendar_potensi_bahaya.get(Calendar.YEAR), calendar_potensi_bahaya.get(Calendar.MONTH), calendar_potensi_bahaya.get(Calendar.DAY_OF_MONTH));
+                waktuTanggalPotensiBahaya.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
                 waktuTanggalPotensiBahaya.show();
             }
         });

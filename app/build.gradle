@@ -32,7 +32,7 @@ android {
 dependencies {
 
     //Library Material Design UI
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
 
     //Library Constraint Layout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -56,9 +56,9 @@ dependencies {
     implementation 'com.github.bfrachia:android-image-cropper:2.7.0'
 
     //Library Firebase
-    implementation 'com.google.firebase:firebase-auth:21.2.0'
-    implementation 'com.google.firebase:firebase-firestore:24.4.5'
-    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-auth:22.0.0'
+    implementation 'com.google.firebase:firebase-firestore:24.6.0'
+    implementation 'com.google.firebase:firebase-storage:20.2.0'
 
     //Library Scalable DP / SP for image and text
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
@@ -71,6 +71,7 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.browser:browser:1.5.0'
+    implementation 'androidx.camera:camera-core:1.2.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'

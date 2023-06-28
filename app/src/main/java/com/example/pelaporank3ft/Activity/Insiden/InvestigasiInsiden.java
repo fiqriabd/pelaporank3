@@ -125,6 +125,7 @@ public class InvestigasiInsiden extends AppCompatActivity {
                     tglInsiden.set(year, month, dayOfMonth);
                     tvTenggatWaktu.setText(formatTanggalInsiden.format(tglInsiden.getTime()));
                 }, calendar_investigasi.get(Calendar.YEAR), calendar_investigasi.get(Calendar.MONTH), calendar_investigasi.get(Calendar.DAY_OF_MONTH));
+                tenggatWaktuInsiden.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
                 tenggatWaktuInsiden.show();
             }
         });

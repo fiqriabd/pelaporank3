@@ -155,6 +155,7 @@ public class LaporInsiden extends AppCompatActivity {
                     tglInsiden.set(year, month, dayOfMonth);
                     etWaktuKejadian.setText(formatTanggalInsiden.format(tglInsiden.getTime()));
                 }, calendar_insiden.get(Calendar.YEAR), calendar_insiden.get(Calendar.MONTH), calendar_insiden.get(Calendar.DAY_OF_MONTH));
+                waktuKejadianInsiden.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
                 waktuKejadianInsiden.show();
             }
         });
